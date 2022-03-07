@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/725910d27b.js" crossorigin="anonymous"></script>
+    
+    <title>Practica 1</title>
+
+    
+    <style>
+        #mapa {
+            height: 600px;
+        }
+    </style>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#F3F3F3">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="Imagenes/airbnb.svg" width="150px" class="w-25" alt="Logo de Airbnb">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-house"></i>Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#quienessomos">Quienes Somos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#ubicacion">Ubicación</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <div>
+        <main class="container bg-blanco80 ">
+          <section>
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="Imagenes/1.jfif" class="d-block w-100" alt="Paisaje 1">
+                </div>
+                <div class="carousel-item">
+                  <img src="Imagenes/2.jpg" class="d-block w-100" alt="Paisaje 2">
+                </div>
+                <div class="carousel-item">
+                  <img src="Imagenes/3.jpg" class="d-block w-100" alt="Paisaje 3">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </section>
+          <section>
+            <div class="container-fluid">
+              <div class="row">
+                <a name="quienessomos"></a>
+                  <div class="col-12 m-5">
+                      <h2>Quienes Somos</h2>
+                      <p>
+                        Es un secreto del estado de Mexico, no podemos dar nombres ni ubicaciones para procurar nuestra seguridad, Bueno soy Cruz 
+                      </p>
+                  </div>
+              </div>
+          </div>
+          </section>
+          <section>
+            <div class="container-fluid">
+              <div class="row">
+                  <div class="col-12 col-md-4">
+                      <img src="https://images.unsplash.com/photo-1614480634115-fdca3874d0cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y2FiYSVDMyVCMWFzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=350&q=60" alt="">
+                      <h2>Cabaña de la muerte</h2>
+                      <p>Cabaña numero 1</p>
+                  </div>
+                  <div class="col-12 col-md-4">
+                      <img src="https://images.unsplash.com/photo-1614480634115-fdca3874d0cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y2FiYSVDMyVCMWFzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=350&q=60" alt="">
+                      <h2>Cabaña mas chida</h2>
+                      <p>Es igual a la 1</p>
+                  </div>
+                  <div class="col-12 col-md-4">
+                      <img src="https://images.unsplash.com/photo-1614480634115-fdca3874d0cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y2FiYSVDMyVCMWFzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=350&q=60" alt="">
+                      <h2>Cabaña fresa</h2>
+                      <p>Es igual a las otras dos que cosas XD</p>
+                  </div>
+              </div>
+          </div>
+          </section>
+          <section>
+            <div class="container m-0 p-0">
+              <div class="row">
+                  <div class="col-12 ,">
+                      <a name="ubicacion">
+                          <div id="mapa"></div>
+                      </a>
+                  </div>
+              </div>
+          </div>
+          </section>
+        </main>
+        <footer class="container-fluid">
+          <div class="container-fluid" style="background-color:#F3F3F3">
+            <div class="row" >
+                <div class="col-12">
+                    <h3 class="py-3 px-2">Siguenos en nuestras redes sociales</h3>
+                    <p class="py-3 px-2">@cabañasigualesperodiferentesprecios.com</p>
+                </div>
+            </div>
+        </div>
+      </footer>
+      </div>
+
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDs13c5TO6t0EeFhnnn6haPHUV66D9D6hc&callback=iniciaMapa" async defer></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      
+
+      <script>
+        function iniciaMapa() {
+            var coordenadas = {
+                lat: 21.152162, lng: -101.711022
+            }
+
+            var map = new google.maps.Map(
+                document.getElementById('mapa'),
+                {
+                    center: coordenadas, zoom:15
+                }
+            );
+
+            var marcador = new google.maps.Marker({
+                position: coordenadas, map:map
+            });
+        }
+      </script>
+
+    <script>
+     AOS.init();
+    </script>
+  </body>
+</html>
