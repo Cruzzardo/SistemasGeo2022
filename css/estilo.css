@@ -1,0 +1,28 @@
+.bg-blanco80{
+    background-color:#F3F3F3
+}
+
+.bg-aqua{
+    background-color:#FAB3B3;
+    color:#000 !important;
+}
+
+h2, h1{
+    font-family: 'Lobster', cursive;
+    margin: 3rem irem 2rem;
+}
+
+a.nav-link{
+    font-family: 'Lobster', cursive;
+    margin: .5rem;
+}
+
+.bg-abajo{
+    color: #F3F3F3;
+    background-color:#F3F3F3 !important;
+    border-color: #F3F3F3;
+}
+
+.bg-light{
+    background: linear-gradient(70deg,#F3F3F3,#FAB3B3 ) !important;
+}
