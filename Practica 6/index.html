@@ -45,6 +45,26 @@
                 icon: icono,
                 map: map
             })
+            if(navigator.geolocation){
+
+                setInterval(()=>{
+                    moverPosicion(marker);
+                },5000);
+
+                moverPosicion(marker);
+            }
+
+            function moverPosicion(marker){
+                navigator.geolocation.getCurrentPosition(posicion => {
+                    var pos = {
+                        lat: posicion.coords.latitude,
+                        lng: posicion.coords.longitude
+                    }
+                    mark.setPosition(pos);
+                    map.panTo(pos);
+                    map.setCenter(pos);
+                });
+            }
         }
     </script>
 
