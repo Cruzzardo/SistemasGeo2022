@@ -4,70 +4,70 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practica 6</title>
-
+    <title>Práctica 6</title>
     <style>
-        #map{
+        #map {
             height: 100%;
         }
-        html, body{
+
+        html,body {
             height: 100%;
-            margin: 0;
+            margin:0;
             padding: 0;
         }
     </style>
+
 </head>
 <body>
+    
     <div id="map"></div>
-
     <script>
         var map;
         var coordenadas = {
-            lat: 0,
-            lng: 0
-        }
-        var propiedades ={
+             lat: 0,
+             lng: 0
+        };
+        var propiedades = {
             center: coordenadas,
             zoom: 20
         }
-
-        function iniciaMapa(){
-            map = new google.maps.Map(document.getElementById("map"), propiedades)
+        function iniciaMapa() {
+            map = new google.maps.Map(document.getElementById("map"), propiedades);
             var icono = {
                 url : "https://media.giphy.com/media/3oEjIacPJYAJubIDLO/giphy.gif",
                 scaledSize: new google.maps.Size(50,50),
                 origin: new google.maps.Point(0,0),
                 anchor: new google.maps.Point(0,0)
             }
-
             var marker = new google.maps.Marker({
                 position: coordenadas,
                 icon: icono,
                 map: map
-            })
+            });
             if(navigator.geolocation){
-
-                setInterval(()=>{
-                    moverPosicion(marker);
+                setInterval( ()=> {
+                    moverPosicion();
                 },5000);
-
-                moverPosicion(marker);
             }
-
-            function moverPosicion(marker){
-                navigator.geolocation.getCurrentPosition(posicion => {
+            function moverPosicion() {
+                navigator.geolocation.getCurrentPosition( posicion =>{
                     var pos = {
                         lat: posicion.coords.latitude,
                         lng: posicion.coords.longitude
                     }
+                    console.table(pos);
                     marker.setPosition(pos);
                     map.panTo(pos);
-                    map.setCenter(pos);
+                    //map.setCenter(pos);
                 });
             }
         }
+
+
     </script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMrQgga-C5zCuZLTVk2MPVzX7naqKZXZU&callback=iniciaMapa" async defer></script>
+
+
 </body>
 </html>
