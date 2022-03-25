@@ -8,14 +8,10 @@
 </head>
 <body>
     <div class="container" id="paises">
-        <div class="row">
-            <div class="col-12">
-            </div>
-        </div>
     </div>
     <script>
         var paises = document.getElementById("paises");
-        fetch('https://sistemasgeo.com/2022/fetch/paises.json')
+        fetch("paises.json")
         .then( response => {
             response.json().then( datos => {
 
