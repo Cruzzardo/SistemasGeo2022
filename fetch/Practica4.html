@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
-    <head>
-    <title>Mapa de información por país Covid-19, en colaboración con los Alumnos de 6o Semestre de Sistemas de la Universidad DeLasalle Bajío hemos creado un mapa mundial con los casos de Covid-19 en tiempo real</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica4 fetch</title>
 
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
     <style>
-    
         #map {
         height: 100%;
         }
@@ -17,11 +17,10 @@
         padding: 0;
         }
     </style>
-    </head>
-    <body>
+</head>
+<body>
     <div id="map"></div>
     <script>
-    
     var coordenadas = {
         lat: 0, 
         lng: 0
@@ -32,24 +31,14 @@
         zoom: 2
         }
 
-    
-
     function iniciaMapa() {
-
-    
         fetch('https://sistemasgeo.com/2022/fetch/paises.json')
         .then(function(response) {
-
             response.json().then(function(datos) {
-    
                 const map = new google.maps.Map(document.getElementById('map'), propiedades);
-
                 console.log(datos);
-
                 datos.forEach( marcador => {
-
                     console.log(marcador);
-
                     var informacion = "<strong>País:</strong> "+ marcador.CountryName;
 
                     var infowindow = new google.maps.InfoWindow({
@@ -65,49 +54,14 @@
                     marker.addListener('click', function() {
                         infowindow.open(map, marker);
                     });
-
-                    /*
-                    fetch('https://sistemasgeo.com/2022/fetch/paises.json')
-                    .then(function(respuesta) {
-                        respuesta.json().then(function(datospaises) {
-                            datospaises.forEach( registro => {
-                                
-                                if(registro.country==marcador.CountryName){
-                                    var informacion = "<strong>País:</strong> "+ registro.country +"<br><strong>Casos:</strong> " + registro.cases + "<br><strong>Nuevos hoy:</strong> " + registro.todayCases + "<br><strong>Muertes:</strong> " + registro.deaths + "<br><strong>Muertes Hoy:</strong> " + registro.todayDeaths + "<br><strong>Recuperados:</strong> " + registro.recovered + "<br><strong>Activos:</strong> " + registro.active + "<br><strong>Críticos:</strong> " + registro.critical + "<br><strong>Casos por millón:</strong> " + registro.casesPerOneMillion;
-                                    var infowindow = new google.maps.InfoWindow({
-                                        content: informacion
-                                    });
-                                    let marker = new google.maps.Marker({
-                                        map: map,
-                                        position: new google.maps.LatLng(marcador.CapitalLatitude, marcador.CapitalLongitude),
-                                        title: marcador.CountryName + registro.cases
-                                    });
-                                    marker.addListener('click', function() {
-                                        infowindow.open(map, marker);
-                                    });
-                                }
-                                
-                            });
-                        });
-                    });
-                    */
-                    
-
-
                 });
-
-
             });
     
         })
         .catch(function(error) {
             console.log('Hubo un problema con la petición Fetch:' + error.message);
         });
-
-        
     }
-    
-
 
     
     </script>
