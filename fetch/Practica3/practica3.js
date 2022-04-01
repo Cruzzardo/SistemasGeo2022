@@ -1,3 +1,22 @@
+const centerCoordinates = ol.proj.fromLonLat([-3.74922, 40.463667,]);
+const initialZoom = 5
+
+
+const view = new ol.View({
+  center: centerCoordinates,
+  zoom: initialZoom
+})
+
+const osmLayer = new ol.layer.Tile({
+  source: new ol.source.OSM()
+})
+
+const map = new ol.Map({
+  target: 'map',
+  layers: [osmLayer],
+  view: view
+});
+
 function zoomTo(coordinates, zoom) {
     map.getView().setCenter(coordinates)
     map.getView().setZoom(zoom);
