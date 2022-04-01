@@ -45,7 +45,8 @@ function iniciaMapa(){
 
         let marker = new google.maps.Marker({
             map: map,
-            position: new google.maps.LatLng(icono),
+            position: new google.maps.LatLng(marcador.latitude, marcador.longitude),
+            icon: icono,
             title: marcador.name
         });
     }
